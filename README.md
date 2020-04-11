@@ -2,6 +2,10 @@
 
 > [Asciiflow](http://asciiflow.com/) in VS Code. 
 
+## Install
+
+[Asciiflow2 - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=zenghongtu.vscode-asciiflow2)
+
 ## Preview
 
 ![preview](https://github.com/zenghongtu/vscode-asciiflow2/blob/master/resources/preview.gif?raw=true)
