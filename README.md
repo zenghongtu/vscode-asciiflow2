@@ -1,10 +1,10 @@
 # vscode-asciiflow2
 
-> Asciiflow in VS Code. Based on [lewish/asciiflow2](https://github.com/lewish/asciiflow2)
+> [Asciiflow](http://asciiflow.com/) in VS Code. 
 
 ## Preview
 
-![preview](resources/preview.gif)
+![preview](https://github.com/zenghongtu/vscode-asciiflow2/blob/master/resources/preview.gif?raw=true)
 
 ## Development
 
@@ -15,3 +15,7 @@
 
 Run the `Open Asciiflow` to create the panel.
 
+
+## Thanks
+
+- [lewish/asciiflow2](https://github.com/lewish/asciiflow2)
