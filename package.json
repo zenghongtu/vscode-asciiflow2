@@ -1,21 +1,31 @@
 {
-  "name": "cat-coding",
-  "description": "Cat Coding - A Webview API Sample",
-  "version": "0.0.1",
-  "publisher": "vscode-samples",
+  "name": "vscode-asciiflow2",
+  "displayName": "Asciiflow2",
+  "description": "Asciiflow in VS Code",
+  "version": "0.1.0",
+  "author": "zenghongtu",
+  "publisher": "zenghongtu",
+  "license": "MIT",
+  "icon": "resources/logo.gif",
   "engines": {
     "vscode": "^1.38.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zenghongtu/vscode-asciiflow2"
+  },
+  "homepage": "https://github.com/zenghongtu/vscode-asciiflow2/blob/master/README.md",
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:asciiflow.open"
+  "keywords": [
+    "asciiflow",
+    "flow",
+    "diagram",
+    "draw",
+    "ascii char"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/microsoft/vscode-extension-samples.git"
-  },
+  "preview": true,
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
