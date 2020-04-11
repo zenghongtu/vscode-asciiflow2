@@ -1,34 +1,17 @@
-# Cat Coding — A Webview API Sample
+# vscode-asciiflow2
 
-Demonstrates VS Code's [webview API](https://code.visualstudio.com/api/extension-guides/webview). This includes:
+> Asciiflow in VS Code. Based on [lewish/asciiflow2](https://github.com/lewish/asciiflow2)
 
-- Creating and showing a basic webview.
-- Dynamically updating a webview's content.
-- Loading local content in a webview.
-- Running scripts in a webview.
-- Sending message from an extension to a webview.
-- Sending messages from a webview to an extension.
-- Using a basic content security policy.
-- Webview lifecycle and handling dispose.
-- Saving and restoring state when the panel goes into the background.
-- Serialization and persistence across VS Code reboots.
+## Preview
 
-## Demo
+![preview](resources/preview.gif)
 
-![demo](demo.gif)
-
-## VS Code API
-
-### `vscode` module
-
-- [`window.createWebviewPanel`](https://code.visualstudio.com/api/references/vscode-api#window.createWebviewPanel)
-- [`window.registerWebviewPanelSerializer`](https://code.visualstudio.com/api/references/vscode-api#window.registerWebviewPanelSerializer)
-
-## Running the example
+## Development
 
 - Open this example in VS Code 1.25+
 - `npm install`
 - `npm run watch` or `npm run compile`
 - `F5` to start debugging
 
-Run the `Cat Coding: Start cat coding session` to create the webview.
+Run the `Open Asciiflow` to create the panel.
+
