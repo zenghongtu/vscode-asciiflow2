@@ -8,8 +8,9 @@ src/**
 package-lock.json
 tsconfig.json
 tslint.json
-**/*.gif
 docs
 .github
 asciiflow2/js-lib
+asciiflow2/closure-compiler.jar
+asciiflow2/compile.sh
 node_modules
