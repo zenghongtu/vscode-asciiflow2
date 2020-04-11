@@ -2,7 +2,16 @@ import * as c from "./constants";
 import Vector from "./vector";
 import View from "./view";
 import State from "./state";
-import { DrawFunction, DrawBox, DrawLine, DrawFreeform, DrawErase, DrawMove, DrawText, DrawSelect } from "./draw/index";
+import {
+  DrawFunction,
+  DrawBox,
+  DrawLine,
+  DrawFreeform,
+  DrawErase,
+  DrawMove,
+  DrawText,
+  DrawSelect,
+} from "./draw/index";
 import DrawFunction from "./draw/function";
 
 /**
@@ -11,8 +20,32 @@ import DrawFunction from "./draw/function";
 const Mode = {
   NONE: 0,
   DRAG: 1,
-  DRAW: 2
+  DRAW: 2,
 };
+
+function copyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+
+  // Avoid scrolling to bottom
+  textArea.style.top = "0";
+  textArea.style.left = "0";
+  textArea.style.position = "fixed";
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand("copy");
+    var msg = successful ? "successful" : "unsuccessful";
+    console.log("Fallback: Copying text command was " + msg);
+  } catch (err) {
+    console.error("Fallback: Oops, unable to copy", err);
+  }
+
+  document.body.removeChild(textArea);
+}
 
 /**
  * Handles user input events and modifies state.
@@ -77,7 +110,11 @@ export default class Controller {
 
     // Drag in progress, update the view origin.
     if (this.mode == Mode.DRAG) {
-      this.view.setOffset(this.dragOriginCell.add(this.dragOrigin.subtract(position).scale(1 / this.view.zoom)));
+      this.view.setOffset(
+        this.dragOriginCell.add(
+          this.dragOrigin.subtract(position).scale(1 / this.view.zoom)
+        )
+      );
     }
     this.lastMoveCell = moveCell;
   }
@@ -100,50 +137,56 @@ export default class Controller {
    * Installs input bindings for common use cases devices.
    */
   installBindings() {
-    $(window).resize(e => {
+    $(window).resize((e) => {
       this.view.resizeCanvas();
     });
 
-    $("#draw-tools > button.tool").click(e => {
+    $("#copy-button").click((e) => {
+      copyTextToClipboard(this.state.outputText());
+    });
+
+    $("#draw-tools > button.tool").click((e) => {
       $("#text-tool-widget").hide(0);
       this.handleDrawButton(e.target.id);
     });
 
-    $("#file-tools > button.tool").click(e => {
+    $("#file-tools > button.tool").click((e) => {
       this.handleFileButton(e.target.id);
     });
 
-    $("button.close-dialog-button").click(e => {
+    $("button.close-dialog-button").click((e) => {
       $(".dialog").removeClass("visible");
     });
 
-    $("#import-submit-button").click(e => {
+    $("#import-submit-button").click((e) => {
       this.state.clear();
       this.state.fromText(
         /** @type {string} */
         ($("#import-area").val()),
-        this.view.screenToCell(new Vector(this.view.canvas.width / 2, this.view.canvas.height / 2))
+        this.view.screenToCell(
+          new Vector(this.view.canvas.width / 2, this.view.canvas.height / 2)
+        )
       );
       this.state.commitDraw();
       $("#import-area").val("");
       $(".dialog").removeClass("visible");
     });
 
-    $("#use-lines-button").click(e => {
+    $("#use-lines-button").click((e) => {
       $(".dialog").removeClass("visible");
       this.view.setUseLines(true);
     });
 
-    $("#use-ascii-button").click(e => {
+    $("#use-ascii-button").click((e) => {
       $(".dialog").removeClass("visible");
       this.view.setUseLines(false);
     });
 
-    $(window).keypress(e => {
+    $(window).keypress((e) => {
       this.handleKeyPress(e);
     });
 
-    $(window).keydown(e => {
+    $(window).keydown((e) => {
       this.handleKeyDown(e);
     });
 
