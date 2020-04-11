@@ -2,7 +2,7 @@
   "name": "vscode-asciiflow2",
   "displayName": "Asciiflow2",
   "description": "Asciiflow in VS Code",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "zenghongtu",
   "publisher": "zenghongtu",
   "license": "MIT",
