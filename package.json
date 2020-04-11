@@ -2,7 +2,7 @@
   "name": "vscode-asciiflow2",
   "displayName": "Asciiflow2",
   "description": "Asciiflow in VS Code",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "zenghongtu",
   "publisher": "zenghongtu",
   "license": "MIT",
@@ -48,8 +48,8 @@
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^10.5.2",
+    "@types/vscode": "^1.38.0",
     "tslint": "^5.16.0",
-    "typescript": "^3.5.1",
-    "@types/vscode": "^1.38.0"
+    "typescript": "^3.5.1"
   }
 }
