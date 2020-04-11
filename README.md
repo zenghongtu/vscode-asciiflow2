@@ -1,6 +1,6 @@
 # vscode-asciiflow2
 
-> [Asciiflow](http://asciiflow.com/) in VS Code. 
+> [Asciiflow](http://asciiflow.com/) in VS Code.
 
 ## Install
 
@@ -12,13 +12,18 @@
 
 ## Development
 
-- Open this example in VS Code 1.25+
+- Open this project in VS Code 1.25+
 - `npm install`
 - `npm run watch` or `npm run compile`
 - `F5` to start debugging
 
 Run the `Open Asciiflow` to create the panel.
 
+## Change Log
+
+### 0.1.3
+
+- Add dark theme
 
 ## Thanks
 
